@@ -18,7 +18,7 @@ services:
       - zookeeper
     environment:
       - MESOS_CLUSTER=local
-      - MESOS_HOSTNAME=127.0.0.1
+      - MESOS_HOSTNAME=localhost
       - MESOS_LOG_DIR=/var/log
       - MESOS_QUORUM=1
       - MESOS_REGISTRY=in_memory
@@ -39,6 +39,7 @@ services:
       - zookeeper
       - mesos-master
     environment:
+      - MESOS_HOSTNAME=localhost
       - MESOS_CONTAINERIZERS=mesos
       - MESOS_ISOLATOR=cgroups/cpu, cgroups/mem
       - MESOS_LOG_DIR=var/log
